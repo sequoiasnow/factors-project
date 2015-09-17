@@ -27,6 +27,23 @@ a {
   text-decoration: underline;
 }
 
+/* line 1, ../sass/elements/_content.scss */
+.content-container, .center-content {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+/* line 9, ../sass/elements/_content.scss */
+.content {
+  width: 700px;
+  padding: 10px;
+}
+
 /* line 1, ../sass/elements/_main-content.scss */
 main .factor {
   position: relative;

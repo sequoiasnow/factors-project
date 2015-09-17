@@ -1,0 +1,12 @@
+.content-container, .center-content {
+    width: 100%;
+
+    @include display-flex;
+    @include flex-direction(row);
+    @include justify-content(center);
+}
+
+.content {
+    width: $content-width;
+    padding: $content-padding;
+}
