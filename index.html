@@ -22,7 +22,7 @@
                 <li><a href="#land">Land</a></li>
                 <li><a href="#labor">Labor</a></li>
                 <li><a href="#capital">Capital</a></li>
-                <li><a href="#entreprenuer">Entreprenuer</a></li>
+                <li><a href="#entrepreneur">Entrepreneur</a></li>
             </ul>
         </section> <!-- #navigation-links -->
     </nav> <!-- #site-navigation -->
@@ -67,7 +67,7 @@
                 <section class="content" data-file="capital.html"></section>
             </section> <!-- .background-image -->
         </section><!-- #captial -->
-        <section id="entreprenuer" class="factor">
+        <section id="entrepreneur" class="factor">
             <div class="center-content">
                 <section class="content">
                     <h1>Entrepreneur</h1>
@@ -92,13 +92,17 @@
         </script>
 
         <section id="sources" class="factor">
+            <div class="center-content">
+                <section class="content"></div>
+            </div>
+
             <script type="text/javascript">
                 $( document ).ready( function() {
                     // The dom has loaded.
 
                     // Include all the sources into the #sources tag.
                     function addSources( data ) {
-                        var $sources = $( '#sources' ); // Get the sources tag.
+                        var $sources = $( '#sources .content' ); // Get the sources tag.
 
                         // Loop through the data and add it to the sources.
                         for ( var i = 0; i < data.length; i++ ) {
