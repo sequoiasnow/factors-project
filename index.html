@@ -37,30 +37,46 @@
         <section id="land" class="factor ">
             <div class="center-content">
                 <section class="content">
-                    <h1>How did we get to pluto?</h1>
+                    <h1>Land</h1>
                 </section> <!-- .content -->
             </div> <!-- .content-container -->
 
-            <section class="background-image dark content-container" style="background-image: url(https://cdn1.vox-cdn.com/thumbor/iLdIosIXQ5xHJxeKfV8jwhTit94=/cdn0.vox-cdn.com/uploads/chorus_asset/file/3858738/JupiterIoMontage.0.jpg);">
-                <section class="content">
-                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-
-Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis.
-
-Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla.
-
-Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                </section>
+            <section class="background-image dark content-container" style="background-image: url(images/jupiter.png);">
+                <section class="content" data-file="land.html"></section>
             </section> <!-- .background-image -->
         </section><!-- #land -->
         <section id="labor" class="factor">
+            <div class="center-content">
+                <section class="content">
+                    <h1>Labor</h1>
+                </section> <!-- .content -->
+            </div> <!-- .content-container -->
 
+            <div class="center-content">
+                <section class="content" data-file="labor.html"></section>
+            </div> <!-- .content-container -->
         </section> <!-- #labor -->
         <section id="capital" class="factor">
+            <div class="center-content">
+                <section class="content">
+                    <h1>Capital</h1>
+                </section> <!-- .content -->
+            </div> <!-- .content-container -->
 
+            <section class="content-container">
+                <section class="content" data-file="capital.html"></section>
+            </section> <!-- .background-image -->
         </section><!-- #captial -->
         <section id="entreprenuer" class="factor">
+            <div class="center-content">
+                <section class="content">
+                    <h1>Entrepreneur</h1>
+                </section> <!-- .content -->
+            </div> <!-- .content-container -->
 
+            <div class="content-container">
+                <section class="content" data-file="entrepreneur.html"></section>
+            </div> <!-- .background-image -->
         </section><!-- #entrepreneur -->
 
         <script type="text/javascript">
@@ -88,9 +104,11 @@ Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna,
                         for ( var i = 0; i < data.length; i++ ) {
                             var $source = $( '<article></article>', { class: 'source' } );
 
-                            // Add the iframe
-                            $source.append( $( '<iframe></iframe>', { src: data[i].src } ) );
-                            $source.append( $( '<div></div>', { class: 'description' } ).html( data[i].description ) );
+                            // Add the link
+                            $source.append( $( '<a></a>', {
+                                class: 'source-link',
+                                href: data[i].src
+                            } ).html( data[i].src ) );
 
                             // Add the source to the sources.
                             $sources.append( $source );
