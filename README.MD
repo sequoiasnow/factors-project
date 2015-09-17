@@ -1,5 +1,5 @@
 # Idea
-
+This site is created for an econmomics project, all desing ideas and inspiration are credited to the pereptuators of this 
 
 
 ## Credit
