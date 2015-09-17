@@ -1,0 +1,77 @@
+#navigation-links {
+    position: fixed;
+    top: -$nav-height;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: $nav-height;
+    z-index: 1;
+
+    @include transition(all $nav-transition-duration);
+
+    background-color: $nav-bgcolor;
+
+    @include display-flex;
+    @include flex-direction(column);
+    @include justify-content(center);
+}
+
+#navigation-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    @include display-flex;
+    @include flex-direction(row);
+    @include justify-content(space-around);
+
+    a {
+        font-size: $nav-font-size;
+        color: $nav-text-color;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+#navigation-toggle {
+    position: fixed;
+    opacity: 1;
+    z-index: 100;
+
+    right: $nav-toggle-size;
+    top: ($nav-height - $nav-toggle-size) / 2;
+
+    width: $nav-toggle-size;
+    height: $nav-toggle-size;
+
+    .row {
+        position: absolute;
+        height: $nav-toggle-row-height;
+        width: 100%;
+        left: 0;
+
+        background-color: $nav-toggle-bgcolor;
+        @include transition(all $nav-transition-duration ease-in);
+    }
+
+    @for $i from 1 through 3 {
+        .row:nth-child(#{$i}) {
+            top: 100% / 3 * $i;
+            @include transition-delay($nav-transition-duration / 3 * ($i - 1));
+        }
+    }
+
+
+}
+
+#navigation-toggle:hover {
+    .row {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+#navigation-toggle:hover ~ #navigation-links {
+    top: 0;
+}

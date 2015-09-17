@@ -1,0 +1,31 @@
+main .factor {
+    position: relative;
+
+    width: 100vw;
+
+    
+
+    // 110 just to be sure
+    padding: #{110vw * sin($factor-background-rotation)} 0;
+}
+
+main .factor .background {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include transform-origin(right, top);
+    @include transform(rotate(-$factor-background-rotation));
+
+    width: 120%;
+    height: 100%;
+    z-index: -1;
+}
+
+body { background-color: $background-color; }
+
+#land .background { background-color: $land-color; }
+#capital .background { background-color: $capital-color; }
+#labor .background { background-color: $labor-color; }
+#entrepreneur .background { background-color: $entrepreneur-color; }
+#sources .background { background-color: $sources-color; }

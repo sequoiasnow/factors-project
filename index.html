@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Horizons Factors Project</title>
+
+    <!-- Include css -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+
+    <!-- Include jQuery -->
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <nav id="site-navigation">
+        <section id="navigation-toggle">
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+        </section>
+
+        <section id="navigation-links">
+            <ul>
+                <li><a href="#land">Land</a></li>
+                <li><a href="#labor">Labor</a></li>
+                <li><a href="#capital">Capital</a></li>
+                <li><a href="#entreprenuer">Entreprenuer</a></li>
+            </ul>
+        </section>
+    </nav>
+
+    <main id="main-content">
+        <section id="land" class="factor">
+            <h1>How did we get to pluto?</h1>
+
+            <section class="element" style="backround-image: url(https://cdn1.vox-cdn.com/thumbor/iLdIosIXQ5xHJxeKfV8jwhTit94=/cdn0.vox-cdn.com/uploads/chorus_asset/file/3858738/JupiterIoMontage.0.jpg);">
+                
+            </section>
+        </section>
+        <section id="labor" class="factor">
+
+        </section>
+        <section id="capital" class="factor">
+
+        </section>
+        <section id="entreprenuer" class="factor">
+
+        </section>
+
+        <script type="text/javascript">
+            var factors = [ 'land', 'labor', 'capital', 'entrepreneur' ];
+
+            // Loop through factors.
+            for ( var i = 0; i < factors.length; i++ ) {
+                var factor = factors[i];
+
+                $.ajax({
+                    "url": "data/" + factor + '.md'
+                });
+            }
+
+        </script>
+
+        <section id="sources" class="factor">
+            <script type="text/javascript">
+                $( document ).ready( function() {
+                    // The dom has loaded.
+
+                    // Include all the sources into the #sources tag.
+                    function addSources( data ) {
+                        var $sources = $( '#sources' ); // Get the sources tag.
+
+                        // Loop through the data and add it to the sources.
+                        for ( var i = 0; i < data.length; i++ ) {
+                            var $source = $( '<article></article>', { class: 'source' } );
+
+                            // Add the iframe
+                            $source.append( $( '<iframe></iframe>', { src: data[i].src } ) );
+                            $source.append( $( '<div></div>', { class: 'description' } ).html( data[i].description ) );
+
+                            // Add the source to the sources.
+                            $sources.append( $source );
+                        }
+                    }
+
+                    $.getJSON( 'data/sources.json', addSources );
+                } );
+            </script>
+        </section>
+        <script type="text/javascript">
+            $( document ).ready( function() {
+                $( '#main-content .factor' ).each( function() {
+                    $( this ).prepend( $( '<div></div>', { class: 'background' } ) );
+                } );
+            } );
+        </script>
+    </main>
+
+    <footer id="primary-footer">
+        <section id="footer-credits">
+            <h3>Site by Sequoia Snow and David Sobek</h3>
+        </section>
+    </footer>
+</body>
+</html>
