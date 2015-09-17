@@ -3,7 +3,7 @@ main .factor {
 
     width: 100vw;
 
-    
+
 
     // 110 just to be sure
     padding: #{110vw * sin($factor-background-rotation)} 0;
@@ -22,10 +22,28 @@ main .factor .background {
     z-index: -1;
 }
 
-body { background-color: $background-color; }
+body {
+    @include perfect-css-background;
+    background-image: $body-backgorund-image;
+}
 
+#history .background { display: none; }
 #land .background { background-color: $land-color; }
 #capital .background { background-color: $capital-color; }
 #labor .background { background-color: $labor-color; }
 #entrepreneur .background { background-color: $entrepreneur-color; }
 #sources .background { background-color: $sources-color; }
+
+main .factor .background-image {
+    @include perfect-css-background;
+
+    width: 100%;
+    height: auto;
+
+    &.dark { color: $light-text-color; }
+
+    &.light { color: $dark-text-color; }
+}
+
+.light-text { color: $light-text-color; }
+.dark-text { color: $dark-text-color; }

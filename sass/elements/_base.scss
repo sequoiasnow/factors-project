@@ -1,12 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,100,300,500,700,800);
+
 html, body {
     padding: 0;
     margin: 0;
 
     max-width: 100%;
     overflow-x: hidden;
+
+    font-family: $font;
+    font-size: $regular-font-size;
+
+    &::-webkit-scrollbar { display: none; }
 }
 
 a {
     color: inherit;
     text-decoration: underline;
+}
+
+
+#{headings()} {
+    text-align: center;
+    font-weight: bold;
 }

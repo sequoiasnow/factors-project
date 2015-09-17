@@ -42,8 +42,8 @@ $black: rgb(52, 73, 94);
 
 
 $nav-toggle-bgcolor: $grey;
-$nav-bgcolor: rgba($lightgrey, 0.5);
-$nav-text-color: $black;
+$nav-bgcolor: rgba(black, 0.8);
+$nav-text-color: $white;
 
 $background-color: $white;
 $land-color: $orange;
@@ -53,3 +53,6 @@ $labor-color: $red;
 $sources-color: $blue;
 
 $column-text-color: $white;
+
+$light-text-color: $white;
+$dark-text-color: black;

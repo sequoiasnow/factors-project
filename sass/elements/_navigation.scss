@@ -72,6 +72,5 @@
     }
 }
 
-#navigation-toggle:hover ~ #navigation-links {
-    top: 0;
-}
+#navigation-toggle:hover ~ #navigation-links,
+#navigation-links:hover { top: 0; }
